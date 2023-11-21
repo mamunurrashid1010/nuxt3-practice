@@ -11,6 +11,10 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 * Create nested page
 * Create page for show all product and specific product details
 
+##### 3. Layouts
+* Create a default layout
+* Create a custom layout
+
 <hr>
 
 ## Basic Concept
@@ -157,3 +161,110 @@ export default {
 </style>
 ```
 Now run command ```npm run dev``` and you can see product page at ```http://yourdomanin/product``` and specific product details page at ```http://yourdomanin/product/2```.
+
+
+##### 3. Layouts
+Description :
+* Layouts are wrappers around pages that contain a common User Interface for several pages, such as a header and footer display. 
+* Layouts are Vue files using <slot /> components to display the page content. 
+* The layouts/default.vue file will be used by default. 
+* Custom layouts can be set as part of your page metadata.
+
+##### 3.1. How to create default layout?
+Create a ```layouts/``` directory in root. Then create ```default.vue``` file under layouts directory like- ```layouts/default.vue``` <br>
+Now open ```layouts/default.vue``` file and add this code
+```
+<template>
+  <div>
+      <!--  header    -->
+      <h3 class="header"> Default layout header </h3>
+
+      <!--  content    -->
+      <slot/>
+
+      <!--  footer    -->
+      <h3 class="footer"> Default layout footer </h3>
+  </div>
+</template>
+<script>
+export default {
+
+}
+</script>
+<style scoped>
+.header{
+    background-color: darkslategray;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+.footer{
+    background-color: #8ca640;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+</style>
+```
+Now delete ```app.vue``` file.
+Now run command ```npm run dev``` and you can see layout with pages in browser.
+
+##### 3.2. How to create custom layout?
+Create a ```contactPageLayout.vue``` file in the layouts directory like- ```layouts/contactPageLayout.vue``` <br>
+Now open ```layouts/contactPageLayout.vue``` file and add this code
+```
+<template>
+    <div>
+        <!--  header    -->
+        <h3 class="header"> Contact page layout header </h3>
+
+        <!--  content    -->
+        <slot/>
+
+        <!--  footer    -->
+        <h3 class="footer"> Contact page layout footer </h3>
+    </div>
+</template>
+<script>
+export default {
+
+}
+</script>
+<style scoped>
+.header{
+    background-color: #ee9b09;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+.footer{
+    background-color: #3a4447;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+</style>
+```
+Now open ```pages/contact/index.vue``` file and add ```layout:'contact-page-layout' ```. like-
+```
+<template>
+    <div>
+        <title>Contact</title>
+        <h1>Contact page</h1>
+    </div>
+</template>
+
+<script>
+definePageMeta({
+    layout:'contact-page-layout'
+})
+export default {
+    name: 'contact',
+}
+</script>
+
+<style scoped>
+
+</style>
+```
+Now run command ```npm run dev``` and you can see custom layout (contact-page-layout) in contact pages.

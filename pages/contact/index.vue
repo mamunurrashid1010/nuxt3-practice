@@ -6,6 +6,9 @@
 </template>
 
 <script>
+definePageMeta({
+    layout:'contact-page-layout'
+})
 export default {
     name: 'contact',
 }
