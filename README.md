@@ -15,6 +15,8 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 * Create a default layout
 * Create a custom layout
 
+##### 4. Bootstrap 5 installation
+
 <hr>
 
 ## Basic Concept
@@ -268,3 +270,29 @@ export default {
 </style>
 ```
 Now run command ```npm run dev``` and you can see custom layout (contact-page-layout) in contact pages.
+
+
+##### 4. Bootstrap installation
+Open terminal and run this command
+```
+npx install bootstrap 
+```
+Now create a ```plugins``` directory and create a new file called ```bootstrap.js```  inside the plugins directory of your Nuxt.js project. In this file, import the Bootstrap JavaScript:
+```
+import 'bootstrap/dist/js/bootstrap.js';
+```
+Now open ```nuxt.config.ts``` file. Inside this file, add the following configuration to import the Bootstrap styles,js into your project:
+```
+export default defineNuxtConfig({
+  devtools: { enabled: true }
+})
+
+// add this
+module.exports={
+  css:['bootstrap/dist/css/bootstrap.css'],
+  plugins: [
+    { src:'~/plugins/bootstrap.js', mode:'client' }
+  ]
+}
+```
+Now run command ```npm run dev``` and test.
