@@ -19,6 +19,8 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 
 ##### 5. Navbar & NuxtLink
 
+##### 6. components
+
 <hr>
 
 ## Basic Concept
@@ -364,6 +366,64 @@ export default {
 .nav-item-link:hover{
     color: yellow;
 }
+</style>
+```
+Now run command ```npm run dev``` and check.
+
+
+##### 6. components
+##### 6.1. How to create component and use?
+Create a ```components/``` directory in root. Then create ```home/``` directory under components directory <br>
+Then create ```components/home/banner.vue``` and ```components/home/slider.vue``` vue file <br>
+Now open ```components/home/banner.vue``` vue file and write code like-
+```
+<template>
+    <div>
+        <h4>I'm from home- banner component</h4>
+    </div>
+</template>
+
+<script>
+
+</script>
+```
+
+Then open ```components/home/slider.vue``` vue file and write code like-
+```
+<template>
+    <div>
+        <h4>I'm from home- slider component</h4>
+    </div>
+</template>
+
+<script>
+
+</script>
+```
+
+Now open ```pages/index.vue``` vue file and import banner.vue, slider.vue component file like-
+```
+<template>
+  <div>
+      <title>HOME</title>
+      <h1>Home page</h1>
+      <button class="btn btn-success m-1">Bootstrap button test</button>
+      
+      <!-- components -->
+      <home-banner/>
+      <home-slider/>
+      
+  </div>
+</template>
+
+<script>
+export default {
+    name: 'Home',
+}
+</script>
+
+<style scoped>
+
 </style>
 ```
 Now run command ```npm run dev``` and check.
