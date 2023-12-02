@@ -21,6 +21,8 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 
 ##### 6. components
 
+##### 7. state
+
 <hr>
 
 ## Basic Concept
@@ -425,5 +427,43 @@ export default {
 <style scoped>
 
 </style>
+```
+Now run command ```npm run dev``` and check.
+
+
+##### 7. state
+##### 7.1. How to define state and use?
+Create ```pages/stateExample/index.vue``` vue file and open and write code like
+```
+<template>
+    <div>
+        <title>State example page</title>
+        <h1>State page</h1>
+
+        <h4>Number : {{ state.number }}</h4>
+        <button class="btn btn-success m-1" @click="increment()">Increment</button>
+        <button class="btn btn-danger m-1" @click="decrement()">Decrement</button>
+        <button class="btn btn-secondary m-1" @click="state.number=0">Reset</button>
+    </div>
+</template>
+
+<script setup>
+    const state = useState(()=>({
+        number:0,
+    }))
+    
+    const increment = ()=>{
+        state.value.number++
+    }
+    
+    const decrement = ()=>{
+        state.value.number--
+    }
+    
+    const reset = ()=>{
+        state.value.number=0;
+    }
+   
+</script>
 ```
 Now run command ```npm run dev``` and check.
