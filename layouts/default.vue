@@ -29,10 +29,21 @@
       <h3 class="footer"> Default layout footer </h3>
   </div>
 </template>
-<script>
-export default {
-
-}
+<script setup>
+    useHead({
+        // font awesome cdn css
+        link:[
+            { rel:"stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css' },
+            { rel:"stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css' },
+            { rel:"stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css' },
+        ],
+        script:[
+            // font awesome cdn js
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/fontawesome.min.js', tagPosition:'bodyClose' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/regular.min.js', tagPosition:'bodyClose'},
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/solid.min.js', tagPosition:'bodyClose' },
+        ]
+    })
 </script>
 <style scoped>
 .header{

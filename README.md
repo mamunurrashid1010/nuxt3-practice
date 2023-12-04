@@ -23,6 +23,9 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 
 ##### 7. state
 
+##### 8. fontawesome
+* fontawesome integrate using cdn
+
 <hr>
 
 ## Basic Concept
@@ -467,3 +470,49 @@ Create ```pages/stateExample/index.vue``` vue file and open and write code like
 </script>
 ```
 Now run command ```npm run dev``` and check.
+
+##### 8. fontawesome
+##### 8.1. fontawesome integrate using cdn?
+Open ```layouts/default.vue``` vue file and add fontawesome cdn link in script section like
+```
+<script setup>
+    useHead({
+        // font awesome cdn css
+        link:[
+            { rel:"stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css' },
+            { rel:"stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css' },
+            { rel:"stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css' },
+        ],
+        script:[
+            // font awesome cdn js
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/fontawesome.min.js', tagPosition:'bodyClose' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/regular.min.js', tagPosition:'bodyClose'},
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/solid.min.js', tagPosition:'bodyClose' },
+        ]
+    })
+</script>
+```
+
+Now create ```components/home/fontAwesomeExample.vue``` vue file and add code
+```
+<template>
+    <div>
+        <h4>I'm from home- font awesome component</h4>
+        <i class="fa-solid fa-eye icon"></i>
+        <i class="fa-solid fa-trash icon"></i>
+        <i class="fa-solid fa-pen-to-square icon"></i>
+    </div>
+</template>
+
+<script>
+
+</script>
+
+<style scoped>
+.icon{
+    margin: 10px;
+}
+</style>
+```
+Now import this component, in any page and 
+run command ```npm run dev``` and check.

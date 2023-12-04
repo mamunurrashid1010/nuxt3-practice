@@ -7,6 +7,7 @@
       <!-- components -->
       <home-banner/>
       <home-slider/>
+      <home-fontAwesomeExample/>
 
   </div>
 </template>
