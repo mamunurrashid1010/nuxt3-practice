@@ -26,6 +26,8 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 ##### 8. fontawesome
 * fontawesome integrate using cdn
 
+##### 9. Axios installation
+
 <hr>
 
 ## Basic Concept
@@ -516,3 +518,10 @@ Now create ```components/home/fontAwesomeExample.vue``` vue file and add code
 ```
 Now import this component, in any page and 
 run command ```npm run dev``` and check.
+
+
+##### 9. Axios Installation
+Run command for install axios
+```
+npm install axios --save
+```
