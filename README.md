@@ -28,6 +28,9 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 
 ##### 9. Axios installation
 
+##### 10. Http request
+* Get request example
+
 <hr>
 
 ## Basic Concept
@@ -525,3 +528,76 @@ Run command for install axios
 ```
 npm install axios --save
 ```
+
+##### 10. Http request
+##### 10.1. Get request example.
+Create component ```components/httpRequest/getRequest.vue``` vue file and open and write code like-
+```
+<template>
+    <div>
+        <h4>Http get request example</h4>
+
+        <button class="btn btn-primary" @click="getData()">Get Data</button>
+
+        <div v-for="post in posts">
+            <p v-if="post.id <=10">
+                ID :{{post.id}} <br>
+                Title :{{post.title}}<br>
+                Message :{{post.body}}<br>
+            </p>
+        </div>
+
+    </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+    name:'get-request',
+    data(){
+        return{
+            posts:[],
+        }
+    },
+    methods:{
+        getData(){
+            axios.get('https://jsonplaceholder.typicode.com/posts')
+                .then(req=>{
+                    this.posts = req.data;
+                })
+                .catch(e=>{
+                    alert('Error')
+                })
+        }
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
+```
+Then create page ```pages/httpRequest/index.vue``` vue file and open and import ```getRequest.vue```component like-
+```
+<template>
+    <div>
+        <title>Http Request</title>
+        <h1>Http request example page</h1>
+
+        <!--  get request component  -->
+        <http-request-get-request/>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'http-request',
+}
+</script>
+
+<style scoped>
+
+</style>
+```
+You can also add this page link in navbar <br>
+Now run command ```npm run dev``` and check.

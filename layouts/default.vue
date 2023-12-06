@@ -17,6 +17,7 @@
                       <NuxtLink to="/product" class="nav-item-link">PRODUCT</NuxtLink>
                       <NuxtLink to="/service" class="nav-item-link">SERVICE</NuxtLink>
                       <NuxtLink to="/stateExample" class="nav-item-link">STATE EXAMPLE</NuxtLink>
+                      <NuxtLink to="/httpRequest" class="nav-item-link">HTTP REQUEST</NuxtLink>
                   </li>
               </ul>
           </div>
