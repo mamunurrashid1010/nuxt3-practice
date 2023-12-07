@@ -601,3 +601,57 @@ export default {
 ```
 You can also add this page link in navbar <br>
 Now run command ```npm run dev``` and check.
+
+##### 10.2. Post request example.
+Create component ```components/httpRequest/postRequest.vue``` vue file and open and write code like-
+```
+<template>
+    <div class="mt-3 mb-3">
+        <h4>Http post request example</h4>
+
+        <form @submit.prevent="store()">
+            <label>Title:</label>
+            <input type="text" v-model="form.title" /><br>
+            <label>Body:</label>
+            <input type="text" v-model="form.body" /><br>
+            <button>Submit</button>
+        </form>
+
+    </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+    name:'post-request',
+    data(){
+        return{
+            form:{
+                title:'',
+                body:'',
+                userId: 1,
+
+            },
+        }
+    },
+    methods:{
+        store(){
+            axios.post('https://jsonplaceholder.typicode.com/posts',this.form)
+                .then(req=>{
+                    alert('success');
+                })
+                .catch(e=>{
+                    alert('Error')
+                })
+        }
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
+```
+Then open ```pages/httpRequest/index.vue``` vue file and import ```postRequest.vue```component <br>
+Now run command ```npm run dev``` and check.
+

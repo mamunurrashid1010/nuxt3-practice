@@ -5,6 +5,9 @@
 
         <!--  get request component  -->
         <http-request-get-request/>
+
+        <!--  post request component  -->
+        <http-request-post-request/>
     </div>
 </template>
 
