@@ -8,6 +8,10 @@
 
         <!--  post request component  -->
         <http-request-post-request/>
+
+        <!--  get details component  -->
+        <http-request-get-details/>
+
     </div>
 </template>
 
