@@ -32,6 +32,7 @@ Nuxt is an open source vue.js framework that makes web development intuitive and
 * Get request example
 * Post request example
 * Get details example
+* Delete example
 
 <hr>
 
@@ -703,4 +704,56 @@ export default {
 </style>
 ```
 Then open ```pages/httpRequest/index.vue``` vue file and import ```getDetails.vue```component <br>
+Now run command ```npm run dev``` and check.
+
+##### 10.4. Delete example.
+Create component ```components/httpRequest/deleteExample.vue``` vue file and open and write code like-
+```
+<template>
+    <div>
+        <h4>Http delete example</h4>
+
+        <p>
+            ID :{{post.id}} <br>
+            Title :{{post.title}}<br>
+            Message :{{post.body}}<br>
+            <button @click="deleteData(post.id)">Delete</button>
+        </p>
+
+    </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+    name:'delete-example',
+    data(){
+        return{
+            post:{
+                id:1,
+                title:"test title",
+                body:"test desc",
+
+            },
+        }
+    },
+    methods:{
+        deleteData(id){
+            axios.delete('https://jsonplaceholder.typicode.com/posts/'+id)
+                .then(req=>{
+                    alert('success')
+                })
+                .catch(e=>{
+                    alert('Error')
+                })
+        }
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
+```
+Then open ```pages/httpRequest/index.vue``` vue file and import ```deleteExample.vue```component <br>
 Now run command ```npm run dev``` and check.

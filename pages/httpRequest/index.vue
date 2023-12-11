@@ -12,6 +12,9 @@
         <!--  get details component  -->
         <http-request-get-details/>
 
+        <!--  delete example component  -->
+        <http-request-delete-example/>
+
     </div>
 </template>
 
